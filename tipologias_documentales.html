@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Formato de Carta Tipo Bloque Extremo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .document-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+        }
+        .document-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .document-section {
+            margin-bottom: 30px;
+        }
+        .document-section label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="document-container">
+        <div class="document-title">Formato de Carta Tipo Bloque Extremo</div>
+        
+        <!-- Formulario con validación -->
+        <form id="document-form" novalidate>
+            
+            <!-- Lugar y fecha de elaboración -->
+            <div class="document-section">
+                <label for="fecha-elaboracion">Lugar y fecha de elaboración</label>
+                <input type="text" id="fecha-elaboracion" class="form-control" placeholder="Ej. Bogotá, 12 de agosto de 2024" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa la fecha y el lugar de elaboración.
+                </div>
+            </div>
+            
+            <!-- Datos del destinatario -->
+            <div class="document-section">
+                <label for="datos-destinatario">Datos del destinatario</label>
+                <textarea id="datos-destinatario" class="form-control" rows="3" placeholder="Ej. Sr. Juan Pérez, Dirección XYZ, Bogotá, Empresa ABC S.A." required></textarea>
+                <div class="invalid-feedback">
+                    Por favor, ingresa los datos del destinatario.
+                </div>
+            </div>
+            
+            <!-- Asunto -->
+            <div class="document-section">
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" class="form-control" placeholder="Ej. Notificación de cambios en la política de privacidad" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa el asunto del documento.
+                </div>
+            </div>
+            
+            <!-- Saludo -->
+            <div class="document-section">
+                <label for="saludo">Saludo</label>
+                <input type="text" id="saludo" class="form-control" placeholder="Ej. Estimado Sr. Pérez" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa el saludo adecuado.
+                </div>
+            </div>
+            
+            <!-- Texto -->
+            <div class="document-section">
+                <label for="texto">Texto</label>
+                <textarea id="texto" class="form-control" rows="5" placeholder="Inserte el texto principal aquí..." required></textarea>
+                <div class="invalid-feedback">
+                    Por favor, ingresa el texto principal del documento.
+                </div>
+            </div>
+            
+            <!-- Despedida -->
+            <div class="document-section">
+                <label for="despedida">Despedida</label>
+                <input type="text" id="despedida" class="form-control" placeholder="Ej. Atentamente" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa una despedida adecuada.
+                </div>
+            </div>
+            
+            <!-- Remitente -->
+            <div class="document-section">
+                <label for="remitente">Remitente</label>
+                <input type="text" id="remitente" class="form-control" placeholder="Ej. Juan Carlos Rodríguez, Gerente de Cumplimiento, ABC S.A." required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa el nombre y cargo del remitente.
+                </div>
+            </div>
+            
+            <!-- Anexos y Copias -->
+            <div class="document-section">
+                <label for="anexos">Anexos y Copias</label>
+                <textarea id="anexos" class="form-control" rows="3" placeholder="Ej. Anexos: Política de Privacidad actualizada, Copia: Archivo Legal" required></textarea>
+                <div class="invalid-feedback">
+                    Por favor, ingresa la información sobre los anexos y copias.
+                </div>
+            </div>
+            
+            <!-- Transcriptor -->
+            <div class="document-section">
+                <label for="transcriptor">Transcriptor</label>
+                <input type="text" id="transcriptor" class="form-control" placeholder="Ej. [Iniciales del Transcriptor]" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa las iniciales del transcriptor.
+                </div>
+            </div>
+            
+            <!-- Botón de envío -->
+            <div class="document-section text-center">
+                <button type="submit" class="btn btn-primary">Generar Documento</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Validación del formulario
+    (function () {
+        'use strict'
+
+        // Obtener el formulario
+        var form = document.getElementById('document-form');
+
+        // Al enviar el formulario
+        form.addEventListener('submit', function (event) {
+            // Si no es válido, prevenir el envío
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            // Marcar como validado
+            form.classList.add('was-validated');
+        }, false);
+    })();
+</script>
+
+</body>
+</html>
